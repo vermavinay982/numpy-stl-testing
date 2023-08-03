@@ -5,17 +5,24 @@ from icecream import ic
 
 # Define the 8 vertices of the cube
 vertices = np.array([\
-    [-1, -1, -1], # 
-    [+1, -1, -1], # x
-    [+1, +1, -1], # x,y
-    [-1, +1, -1], # y
-    [-1, -1, +1], # z
-    [+1, -1, +1], # x,z
-    [+1, +1, +1], # x,y,z
-    [-1, +1, +1]  # y,z
+    [-1, -1, -1], # (0, A)
+    [+1, -1, -1], # (1, B)x
+    [+1, +1, -1], # (2, C)x,y
+    [-1, +1, -1], # (3, D)y
+    
+    [-1, -1, +1], # (4, E)z
+    [+1, -1, +1], # (5, F)x,z
+    [+1, +1, +1], # (6, G)x,y,z
+    [-1, +1, +1]  # (7, H)y,z
     ])
 # Define the 12 triangles composing the cube
 faces = np.array([\
+    # [0,2,1],
+    # [0,5,1]
+
+    # [0,3,2],
+    # [0,3,5]
+
     [0,3,1],
     [1,3,2],
 
@@ -29,9 +36,9 @@ faces = np.array([\
     [5,2,6],
 
     [2,3,6],
-    [3,7,6],
+    # [3,7,6],
 
-    [0,1,5],
+    # [0,1,5],
     [0,5,4]
     ])
 
@@ -57,6 +64,6 @@ for i, f in enumerate(faces):
     # mesh.show()
 
 # Write the mesh to file "cube.stl"
-cube.save('cube.stl')
+cube.save('cube_test.stl')
 
 
